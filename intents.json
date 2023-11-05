@@ -1,47 +1,52 @@
 {
     "intents": [
         {
-            "tag": "greeting",
-            "patterns": ["Hi there", "How are you", "Is anyone there?", "Hey", "Hola", "Hello", "Good day"],
-            "responses": ["Hello", "Good to see you again", "Hi there, how can I help?"],
+            "tag": "noanswer",
+            "patterns": [""," ","   "],
+            "responses": ["Sorry, can't understand you, Oink Oink :)!", "Please give me more info, Oink Oink :)!", "Not sure I understand, Oink Oink :)!"],
             "context": [""]
-        },
+       },
         {
             "tag": "goodbye",
             "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
-            "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+            "responses": ["See you! Oink Oink :)!", "Have a nice day, Oink Oink :)!", "Bye! Come back again soon, Oink Oink :)!"],
             "context": [""]
         },
         {
             "tag": "thanks",
             "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
-            "responses": ["My pleasure", "You're Welcome"],
+            "responses": ["My pleasure, Oink Oink :)!", "You're Welcome, Oink Oink :)!"],
             "context": [""]
         }, 
         {
-            "tag": "noanswer",
-            "patterns": [],
-            "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+            "tag": "greeting",
+            "patterns": ["Hi there", "How are you", "Is anyone there?", "Hey", "Hola", "Hello", "Good day"],
+            "responses": ["Hello, Oink Oink :)!", "Good to see you again, Oink Oink :)!", "Hi there, how can I help? Oink Oink :)!"],
             "context": [""]
-       },
+        },
+        {
+            "tag": "piggy",
+            "patterns": ["Who are you", "Whats your name", "what are you", "Whats your name please"],
+            "responses": ["Hi, I'm your personal Mr.PiggyBankBuddy, President of Successvillehi! Nice to meet you! I'm here to help you with any financial questions! Oink Oink :)!", "Good to see you again", "Hi there, how can I help?"],
+            "context": [""]
+        },
        {"tag": "options",
         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
-        "responses": ["I can guide you through general financial advice, budgeting tips and teach you financial responsibility!", "Offering support for financial worries, budgeting know-how and help teach you financial responsibility"],
+        "responses": ["I can guide you through general financial advice, budgeting tips and teach you financial responsibility! Oink Oink :)!", "Offering support for financial worries, budgeting know-how and help teach you financial responsibility, Oink Oink :)!"],
         "context": [""]
        },
         {
-            "tag": "teenager_financial_advice",
+            "tag": "teenager_saving_advice",
             "patterns": [
                 "How can I save money?",
-                "What's the best way to budget?",
                 "Can you help me with a savings plan?",
-                "What are some tips for managing my allowance?",
-                "How do I start investing as a teenager?",
-                "What's the difference between savings and checking accounts?",
-                "How can I build good financial habits?",
-                "What should I know about credit cards as a teenager?"
+                "How can I build good financial habits?"
             ],
-            "responses": ["Sure, I can help you with financial advice. It's great that you're thinking about managing your money at a young age. Here are some tips..."],
+            "responses": ["Sure, I can help you with financial advice. It's great that you're thinking about managing your money at a young age. One effective way to save money is by creating a budget. Track your income and expenses to identify areas where you can cut back. Set a savings goal and allocate a portion of your income to savings each month. Oink Oink :)!",
+            "Certainly! A savings plan starts with defining your financial goals. I can assist you in creating a personalized plan to achieve those goals. We'll consider your income, expenses, and a timeline to make your savings journey more manageable and successful. Oink Oink :)!",
+            "Building good financial habits requires discipline and consistency. Start by creating a budget, tracking your spending, and setting savings goals. Automate your savings, pay bills on time, and avoid unnecessary debt. Regularly reviewing your financial situation is also crucial in developing healthy financial habits. Oink Oink :)!",
+            "One effective strategy for saving money is to reduce discretionary spending. This includes dining out less, making coffee at home, and cutting back on impulse purchases. Additionally, consider setting up an emergency fund to cover unexpected expenses and avoid high-interest debt, Oink Oink :)!",
+            "Absolutely! A savings plan is a great way to achieve financial goals. We can start by defining your objectives, whether it's saving for a vacation, a home, or retirement. Then, we'll work on setting a realistic timeline, allocating funds, and identifying the best savings or investment vehicles to help you reach your goals. Oink Oink :)!"],
             "context": [""]
         },
         {
@@ -51,26 +56,38 @@
                 "Are there any low-risk investments for teenagers?",
                 "What's the importance of long-term investments?",
                 "How can I learn more about the stock market?",
-                "Can you recommend any investment apps for beginners?",
                 "What are the basics of building an investment portfolio?",
                 "Is it a good idea to invest in stocks as a teenager?"
             ],
-            "responses": ["Investing as a teenager is a great way to grow your money over time. Here are some things to consider..."],
+            "responses": ["Investing as a teenager is a great way to grow your money over time. Here are some things to consider, Constructing an investment portfolio involves diversifying your investments across different asset classes to mitigate risk. Typically, this includes assets like stocks, bonds, and potentially other investments. Your portfolio should align with your risk tolerance and long-term financial goals, Oink Oink :)!",
+                "Investing in stocks as a teenager can be a viable option if you have a long-term perspective and are comfortable with market fluctuations. It's advisable to start with a small portion of your savings and consider diversified investments. However, understanding the risks and conducting thorough research is essential before venturing into stock investments. Oink Oink :)!",
+                "Expanding your knowledge about the stock market is a valuable endeavor. You can begin by exploring online resources, educational materials, books, and following financial news. Starting with the fundamentals and gradually deepening your understanding is key. Oink Oink :)!",
+                "Long-term investments hold significance because they enable your money to potentially grow substantially over time. They are less susceptible to short-term market fluctuations and help you work toward your financial objectives. Oink Oink :)!",
+                "Certainly, there are low-risk investment choices suitable for teenagers. These include conservative options like savings accounts, bonds, or other fixed-income assets. They provide stability and are less subject to market volatility. Oink Oink :)!",
+                "Investing your pocket money offers various opportunities. You can explore options like savings accounts, bonds, or investment vehicles such as stocks or funds. The choice depends on your financial goals and risk tolerance. Oink Oink :)!"],
             "context": [""]
         },
         {
             "tag": "teenager_budgeting",
             "patterns": [
                 "How can I create a budget for my allowance?",
-                "What's the 50/30/20 budget rule, and should I use it?",
-                "Are there any budgeting apps for teenagers?",
                 "How can I avoid overspending?",
                 "What's the difference between needs and wants in a budget?",
                 "Can you provide tips for saving money on a tight budget?",
                 "How should I prioritize my spending as a teenager?"
             ],
-            "responses": ["Budgeting is a smart way to manage your money. Let's talk about some budgeting techniques..."],
+            "responses": ["Budgeting is a smart way to manage your money. Creating a budget for your allowance is a practical step. You can begin by listing your income sources, like your allowance, and categorizing your expenses. Allocate a portion to savings, and be mindful of how you distribute the rest based on your needs and financial goals. Oink Oink :)!",
+                "Avoiding overspending is essential for budget management. Set spending limits for different expense categories, track your spending, and consider using apps or tools to help you stay on top of your budget. Prioritize saving and be mindful of impulse purchases. Oink Oink :)!",
+                "Distinguishing between needs and wants is fundamental. Needs are essential expenses for survival, like food and shelter, while wants are non-essential, like entertainment or luxury items. In a budget, prioritize needs and allocate discretionary funds for wants. Oink Oink :)!",
+                "Saving on a tight budget can be achieved by cutting non-essential expenses, finding cost-effective alternatives, and seeking discounts or deals. Prioritize needs, reduce impulse spending, and explore opportunities to increase your income. Oink Oink :)!",
+                "Prioritizing spending is crucial for responsible financial management. Allocate a portion of your income to savings first. Then, focus on essential needs like food, education, and clothing. After that, consider allocating funds to discretionary expenses and leisure activities while being mindful of your overall financial goals. Oink Oink :)!"],
             "context": [""]
-        }
+        },
+        {
+            "tag": "slay",
+            "patterns": ["slay","slayyy","slay queen"],
+            "responses": ["SLAY GIRL, Oink Oink :)!", "SLAY WITH THOSE SAVING BAE!!!! Oink Oink :)!", "SLLLLLAAAAAAYYYY GOOD FINANCIAL HABITS GIRL <3, Oink Oink :)!"],
+            "context": [""]
+       }
     ]
 }

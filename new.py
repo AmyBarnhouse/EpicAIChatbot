@@ -3,20 +3,21 @@ import json
 import pickle
 import numpy as np
 import tensorflow as tf
-import nltk
 
+import nltk
 from nltk.stem import WordNetLemmatizer
-from keras.models import load_model
 
 lemmatizer = WordNetLemmatizer()
-
+##load json file
 intents = json.loads(open('intents.json').read())
 
+#initialise definitions
 words = []
 classes = []
 documents = []
-ignoreLetters = ['?', '!', '.', ',']
+ignoreLetters = ['?', '!', '.', ',', ':','(',')']
 
+##reads the possible inputs in the json and adds them to a list, then adds their tag to classes.pkl
 for intent in intents['intents']:
     for pattern in intent['patterns']:
         wordList = nltk.word_tokenize(pattern)
@@ -25,9 +26,11 @@ for intent in intents['intents']:
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
 
+##sorts the word list
 words = [lemmatizer.lemmatize(word) for word in words if word not in ignoreLetters]
 words = sorted(set(words))
 
+##sorts the classes
 classes = sorted(set(classes))
 
 pickle.dump(words, open('words.pkl', 'wb'))
@@ -47,13 +50,15 @@ for document in documents:
     outputRow[classes.index(document[1])] = 1
     training.append(bag + outputRow)
 
+##prepares training set
 random.shuffle(training)
 training = np.array(training)
 
+##initialising training
 trainX = training[:, :len(words)]
 trainY = training[:, len(words):]
 
-
+##used tensorflow to train chatbot
 model = tf.keras.Sequential()
 model.add(tf.keras.layers.Dense(128, input_shape=(len(trainX[0]),), activation = 'relu'))
 model.add(tf.keras.layers.Dropout(0.5))
@@ -66,4 +71,6 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 
 hist = model.fit(np.array(trainX), np.array(trainY), epochs=200, batch_size=5, verbose=1)
 model.save('chatbot_model.h5', hist)
-print('done')
+print('Done')
+
+
