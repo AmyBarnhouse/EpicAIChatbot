@@ -25,7 +25,7 @@ model = load_model('chatbot_model.h5')
 
 
 
-##chop sentence and lemmatize it, option to ass a spell checker
+##chop sentence and lemmatize it, option to add a spell checker
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     #spell = SpellChecker()
@@ -33,6 +33,7 @@ def clean_up_sentence(sentence):
     sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
     return sentence_words
 
+##that converts a sentence into a binary feature vector
 def bag_of_words (sentence):
     sentence_words = clean_up_sentence(sentence)
     bag = [0] * len(words)
